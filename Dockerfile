@@ -1,7 +1,7 @@
 # parameters
-ARG REPO_NAME="robotics"
+ARG REPO_NAME="robotics_repo"
 ARG DESCRIPTION="Base class repo for Hunter College robotics with Raj Korpan"
-ARG MAINTAINER="Allison Lee (allison.lee32@myhunter.cuny.edu)"
+ARG MAINTAINER="Allison Lee (esera.lee093@gmail.com)"
 # pick an icon from: https://fontawesome.com/v4.7.0/icons/
 ARG ICON="cube"
 
