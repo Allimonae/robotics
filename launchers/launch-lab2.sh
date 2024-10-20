@@ -1,12 +1,12 @@
 #!/bin/bash
 
 LAB_PACKAGE="learning_ros"
-LAB_LAUNCH="lab2.launch"
+LAB_LAUNCH="walli.launch"
 
-source /environment.sh
+source ~/catkin_ws/devel/setup.bash
 
 # initialize launch file
-dt-launchfile-init
+# dt-launchfile-init
 
 # YOUR CODE BELOW THIS LINE
 # ----------------------------------------------------------------------------

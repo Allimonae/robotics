@@ -1,0 +1,8 @@
+<launch>
+    <!-- Include the turtlesim_helper package launch file -->
+    <include file="$(find turtlesim_helper)/launch/turtlesim.launch" />
+
+    <!-- Start your walli node -->
+    <node pkg="learning_ros" type="walli.py" name="walli_node" output="screen" />
+</launch>
+
