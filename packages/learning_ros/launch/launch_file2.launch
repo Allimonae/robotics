@@ -1,1 +1,16 @@
-include
+<launch>
+	# start turtlesim node
+	<node pkg="turtlesim" type="turtlesim_node" name="turtlesim" output="screen"/>
+	
+	# this new node that calculates distance
+	<node pkg="learning_ros" type="lab2_part2.py" name="distance_calculator" output="screen"/>
+	
+	# part 1 publisher
+	<node pkg="learning_ros" type="lab2_part1.py" name="chatter" />
+	
+	# rqt graph
+	<node pkg="rqt_graph" name="rqt_graph" type="rqt_graph" />
+	
+	# rostopic echo for chosen output topic
+	<node pkg="rostopic" name="rostopic" type="rostopic" output="screen" args="echo distance_traveled" />
+</launch>
