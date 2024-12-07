@@ -1,16 +1,31 @@
 <launch>
-	# start turtlesim node
-	<node pkg="turtlesim" type="turtlesim_node" name="turtlesim" output="screen"/>
-	
-	# this new node that calculates distance
-	<node pkg="learning_ros" type="lab2_part2.py" name="distance_calculator" output="screen"/>
-	
-	# part 1 publisher
-	<node pkg="learning_ros" type="lab2_part1.py" name="chatter" />
-	
-	# rqt graph
-	<node pkg="rqt_graph" name="rqt_graph" type="rqt_graph" />
-	
-	# rostopic echo for chosen output topic
-	<node pkg="rostopic" name="rostopic" type="rostopic" output="screen" args="echo distance_traveled" />
+     
+    <!-- Start turtlesim node -->
+    <node pkg="turtlesim" type="turtlesim_node" name="turtlesim" output="screen"/>
+    
+    <!-- Part 1 chatter -->
+    <node pkg="learning_ros" type="lab2_part1.py" name="chatter" output="screen"/>
+    
+    <!-- Part 2 calculates distance -->
+    <node pkg="learning_ros" type="lab2_part2.py" name="distance_calculator" output="screen"/>
+
+    <!-- Part 3 converts distance -->
+    <node pkg="learning_ros" type="lab2_node1.py" name="convert_distance" output="screen"/>
+    	<param name="distance_unit" value="smoots" />
+   
+    
+    <!-- Part 3 parameter setter -->
+    <node pkg="learning_ros" type="lab2_node2.py" name="param_setter" output="screen"/>
+    	<param name="distance_unit" value="smoots" />
+    
+    
+    <!-- RQT graph -->
+    <node pkg="rqt_graph" name="rqt_graph" type="rqt_graph" />
+    
+    <!-- Rostopic echo for distance -->
+    <node pkg="rostopic" name="rostopic_distance" type="rostopic" output="screen" args="echo distance_traveled" />
+    
+    <!-- Rostopic echo for converted distance -->
+    <node pkg="rostopic" name="rostopic_converted_distance" type="rostopic" output="screen" args="echo converted_distance" />
 </launch>
+

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 LAB_PACKAGE="learning_ros"
-LAB_LAUNCH="walli.launch"
+LAB_LAUNCH="launch_file1.launch"
 
 source ~/catkin_ws/devel/setup.bash
 
