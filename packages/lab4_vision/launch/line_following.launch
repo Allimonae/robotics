@@ -1,0 +1,16 @@
+<launch>
+    <!-- Set the TURTLEBOT3_MODEL environment variable directly -->
+    <env name="TURTLEBOT3_MODEL" value="waffle"/>
+    
+    <!-- Include the line_following.launch file with arguments -->
+    <include file="$(find tuos_simulations)/launch/line_following.launch">
+        <arg name="x_pos" value="3" />
+        <arg name="y_pos" value="-3" />
+        <arg name="yaw" value="0" />
+        <arg name="model" value="$(env TURTLEBOT3_MODEL)"/>  <!-- Reference the environment variable -->
+    </include>
+    
+    <!-- Launch the line_follower node -->
+    <node pkg="lab4_vision" type="line_follower.py" name="line_follower" output="screen" />
+</launch>
+
