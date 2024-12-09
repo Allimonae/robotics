@@ -1,0 +1,6 @@
+<launch>
+	<param name="model" value="waffle"/>
+    	<include file="$(find tuos_simulations)/launch/coloured_pillars.launch">	
+    	</include>
+    	<node pkg="lab4_vision" type="colour_search.py" name="turn_and_face" output="screen" />
+</launch>

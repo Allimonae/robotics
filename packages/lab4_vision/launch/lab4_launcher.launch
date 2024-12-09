@@ -1,14 +1,15 @@
 <launch>
-	<env name="TURTLEBOT3_MODEL" value="waffle"/>
-	
 	<param name="model" value="waffle"/>
 	
     	<include file="$(find tuos_simulations)/launch/line_following.launch">
 		<arg name="x_pos" value="3" />
 		<arg name="y_pos" value="-3" />
 		<arg name="yaw" value="0" />
-		<arg name="model" value="$(env TURTLEBOT3_MODEL)"/>
+		<arg name="model" value="$(env TURTLEBOT3_MODEL)"/>	
+		
     	</include>
     	
     	<node pkg="lab4_vision" type="line_follower.py" name="line_follower" output="screen" />
+    	
+    
 </launch>
