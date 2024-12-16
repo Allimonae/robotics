@@ -1,4 +1,7 @@
 <launch>
+	<include file="$(find turtlebot3_gazebo)/launch/turtlebot3_empty_world.launch">
+    	<arg name="model" value="waffle"/>
+  	</include>
 	<node pkg="lab3_navigation" type="odom_subscriber.py" name="odom_subscriber" output="screen" />
 	<node pkg="lab3_navigation" type="move_square.py" name="square_publisher" output="screen" />
 </launch>
