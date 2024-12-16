@@ -1,4 +1,7 @@
 <launch>
-	<node pkg="lab3_navigation" type="odom_subscriber.py" name="odom_subscriber" output="screen" />
-	<node pkg="lab3_navigation" type="move_circle.py" name="circle_publisher" output="screen" />
+	<include file="$(find turtlebot3_gazebo)/launch/turtlebot3_empty_world.launch">
+    	<arg name="model" value="waffle"/>  <!-- Change "waffle" to the desired TurtleBot3 model -->
+  	</include>
+	<node pkg="lab3_navigation" type="odom_subscriber.py" name="odom_subscriber" output="screen"/>
+	<node pkg="lab3_navigation" type="move_circle.py" name="circle_publisher" output="screen"/>
 </launch>
