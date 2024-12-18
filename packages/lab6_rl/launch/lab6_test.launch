@@ -1,0 +1,6 @@
+<launch>
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_house.launch"/>
+    <node pkg="lab6_rl" name="turtlebot_rl_testing" type="test_turtlebot.py" output="screen">
+        <param name="model_path" value="/home/allison/catkin_ws/src/robotics/packages/lab6_rl/src/sac_turtlebot" />
+    </node>
+</launch>
